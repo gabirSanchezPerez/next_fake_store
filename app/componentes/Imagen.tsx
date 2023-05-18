@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 
-const loaderImage = ({src, w, q}) => {
-    return `${src}?w=${w}&q=${q}`
+const loaderImage = ({src, width, quality}) => {
+    return `${src}?w=${width}&q=${quality || 75}`
 }
 
 const Imagen = ({v}) => {
     return (
         <>
-            <Image
+            <Image className=' object-contain'
             loader={loaderImage}
             loading='lazy'
             width={150}

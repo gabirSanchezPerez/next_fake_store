@@ -5,13 +5,13 @@ const loadData = async () => {
     return await fetch(`${API}products`, {cache: 'no-store'})
     .then(resp => resp.json())
     .then(data => data)
-    .catch(err => err)
+    .catch(err => console.log(err))
 }
 
 const page = async () => {
     const data = await loadData();
     return (
-        <section className="flex min-h-screen flex-row flex-wrap items-center justify-between p-4">
+        <section className="tablero grid gap-4 grid-cols-5 p-4">
             {data?.map( (v) => (
                 <Ficha key={v.id} v={v} />
             ))}
