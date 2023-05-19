@@ -1,6 +1,8 @@
 import Providers from '@/store/provider'
 import './globals.css'
 import { Montserrat } from 'next/font/google'
+import Carrito from '@/app/carrito/Carrito'
+import Link from 'next/link'
 
 const inter = Montserrat({ subsets: ['latin'], weight: '400' })
 
@@ -17,7 +19,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={inter.className}>{children}</body>
+        <body className={`${inter.className} min-h-screen`} >
+          <section className='flex m-4 h-[200px] hidden'>
+            <Carrito />
+          </section>
+          <main className="flex flex-col items-center py-4">
+            <nav className='grid gap-4 grid-cols-3 mt-4 text-center'>
+              <Link className='py-2 px-4 border-2 rounded-md hover:bg-purple-800 border-purple-600 hover:text-white' href="/">Inicio</Link>
+              <Link className='py-2 px-4 border-2 rounded-md hover:bg-green-800 border-green-600 hover:text-white' href="categorias">Categorias</Link>
+              <Link className='py-2 px-4 border-2 rounded-md hover:bg-blue-800 border-blue-600 hover:text-white' href="productos">Productos</Link>
+            </nav>
+          </main>
+          <section>{children}</section>
+        </body>
       </Providers>
     </html>
   )
