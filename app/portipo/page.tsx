@@ -1,11 +1,11 @@
 'use client'
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Ficha from "../componentes/Ficha";
 
 const page = () => {
-    const categoria = useSelector(state => state?.misValores.categoria)
-    const [content, setContent] = useState([])
+    const content = []; //useSelector(state => state?.misValores.categoria)
+    /*const [content, setContent] = useState([])
     const getProducts = async () => {
         const API = process.env.NEXT_PUBLIC_URL_API
         const result = await fetch(`${API}products/category/${categoria}`)
@@ -14,7 +14,7 @@ const page = () => {
     }
     useEffect(() => {
         getProducts()
-    }, []);
+    }, []);*/
 
     return (
         <>
