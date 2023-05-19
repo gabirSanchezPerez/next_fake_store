@@ -6,7 +6,7 @@ import { devolver } from "@/store/mySlice";
 const Carrito = () => {
     const [total, setTotal] = useState(0)
     const productCarrito = useSelector(state => state?.misValores.miCarrito)
-    console.log(productCarrito)
+    
     const dispatch = useDispatch()
     const eliminar = (id) => {
         dispatch( devolver(id))
